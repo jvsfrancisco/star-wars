@@ -12,9 +12,9 @@ export const Container = styled.div`
   padding: 0 2rem;
   background-color: ${({ theme }) => theme.colors["bg-color"]};
   z-index: 1000;
-  a{
+  a {
     text-decoration: none;
-    a:hover{
+    a:hover {
       text-decoration: none;
     }
   }
@@ -72,17 +72,18 @@ export const Nav = styled.div<{ $isMenuOpen: boolean }>`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  transform: ${({ $isMenuOpen }) => ($isMenuOpen ? "translateX(0)" : "translateX(-80%)")};
+  transform: ${({ $isMenuOpen }) =>
+    $isMenuOpen ? "translateX(0)" : "translateX(-80%)"};
   transition: transform 0.3s ease-in-out;
 
   a {
     margin: 1rem 0 1rem 1rem;
-    text-decoration: none;  
+    text-decoration: none;
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     gap: 1rem;
-    &:hover{
+    &:hover {
       svg {
         fill: ${({ theme }) => theme.colors["secondary-color"]};
       }
@@ -90,7 +91,7 @@ export const Nav = styled.div<{ $isMenuOpen: boolean }>`
         color: ${({ theme }) => theme.colors["secondary-color"]};
       }
     }
-    svg{
+    svg {
       width: 1.1rem;
       height: 1.1rem;
     }

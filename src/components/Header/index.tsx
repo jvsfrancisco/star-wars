@@ -3,15 +3,11 @@ import { Link } from "react-router-dom";
 import * as S from "./styled";
 import { FaFilm } from "react-icons/fa6";
 import { FaHouse } from "react-icons/fa6";
-import { FaClipboardUser  } from "react-icons/fa6";
-import { FaEarthAmericas  } from "react-icons/fa6";
+import { FaClipboardUser } from "react-icons/fa6";
+import { FaEarthAmericas } from "react-icons/fa6";
 import { FaRocket } from "react-icons/fa6";
 import { FaCaravan } from "react-icons/fa6";
 import { FaDna } from "react-icons/fa6";
-
-
-
-
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +38,7 @@ const Header: React.FC = () => {
           <h2>Films</h2>
         </Link>
         <Link to="/people">
-          <FaClipboardUser/>
+          <FaClipboardUser />
           <h2>People</h2>
         </Link>
         <Link to="/planets">
