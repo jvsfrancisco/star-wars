@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 interface CardProps {
-  flipped: boolean;
+  $flipped: boolean;
 }
 
 export const CardContainer = styled.div<CardProps>`
@@ -12,6 +12,9 @@ export const CardContainer = styled.div<CardProps>`
   justify-content: center;
   align-items: center;
   margin: 50px auto;
+  @media (min-width: 768px) {
+    width: 600px;
+  }
 `;
 
 export const CardInner = styled.div<CardProps>`
@@ -21,7 +24,8 @@ export const CardInner = styled.div<CardProps>`
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  transform: ${({ flipped }) => (flipped ? 'rotateY(180deg)' : 'rotateY(0deg)')};
+  transform: ${({ $flipped }) =>
+    $flipped ? "rotateY(180deg)" : "rotateY(0deg)"};
 `;
 
 export const CardFront = styled.div`
@@ -31,19 +35,19 @@ export const CardFront = styled.div`
   backface-visibility: hidden;
   background: ${({ theme }) => theme.colors["bg-color"]};
   border: 1px solid ${({ theme }) => theme.colors["secondary-color"]};
-  backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
   color: white;
-  svg{
+  svg {
     width: 4rem;
     height: 4rem;
   }
-  h2{
+  h2 {
     margin-top: 1rem;
     letter-spacing: 2px;
   }
@@ -58,14 +62,15 @@ export const CardBack = styled.div`
     145deg,
     rgba(0, 0, 0, 0.7),
     rgba(255, 255, 255, 0.05)
-  ); 
-  border: 1px solid ${({ theme }) => theme.colors["secondary-color"]};  backdrop-filter: blur(10px);
+  );
+  border: 1px solid ${({ theme }) => theme.colors["secondary-color"]};
+  backdrop-filter: blur(10px);
   border-radius: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8); 
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
   color: white;
   transform: rotateY(180deg);
 `;

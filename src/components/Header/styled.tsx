@@ -61,13 +61,13 @@ export const MenuIcon = styled.div<{ $ishome: boolean }>`
   }
 `;
 
-export const Nav = styled.div<{ $isMenuOpen: boolean, $ishome: boolean }>`
+export const Nav = styled.div<{ $isMenuOpen: boolean; $ishome: boolean }>`
   position: absolute;
   top: 9vh;
   left: 0;
   width: 60%;
   height: calc(100vh - 9vh);
-  background-color: transparent;
+  background-color: ${({ theme }) => theme.colors["bg-color"]};
   display: ${({ $ishome }) => ($ishome ? "none" : "flex")};
   flex-direction: column;
   align-items: flex-start;
@@ -109,6 +109,7 @@ export const Nav = styled.div<{ $isMenuOpen: boolean, $ishome: boolean }>`
     margin-left: 2rem;
     align-items: center;
     height: 100%;
+    background-color: transparent;
     a {
       margin: 0 1rem;
       h2 {

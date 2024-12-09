@@ -13,7 +13,7 @@ interface HeaderProps {
   ishome?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ishome = true}) => {
+const Header: React.FC<HeaderProps> = ({ ishome = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ishome = true}) => {
         <h1>Star Wars</h1>
       </Link>
 
-      <S.Nav $isMenuOpen={isMenuOpen}  $ishome={ishome}>
+      <S.Nav $isMenuOpen={isMenuOpen} $ishome={ishome}>
         <Link to="/home">
           <FaHouse />
           <h2>Home</h2>
