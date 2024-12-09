@@ -1,33 +1,34 @@
 import Header from "../../components/Header";
 import FlipCard from "../../components/FlipCard";
-import { FaEarthAmericas } from "react-icons/fa6";
+import { FaCaravan } from "react-icons/fa6";
 import * as S from "./styled";
 import useApi from "../../hooks/useApi";
 import { generateRandomNumber } from "../../services/numberGenerator";
 
-const Planets: React.FC = () => {
-  let randomNumber = generateRandomNumber(60);
+const Vehicles: React.FC = () => {
+  let randomNumber = generateRandomNumber(39);
   const selectedNumbers: [Number] | any = [];
   const { data, loading, getInstanceById } = useApi();
   const handleGetFilm = async () => {
     try {
       while (selectedNumbers.includes(randomNumber)) {
-        randomNumber = generateRandomNumber(60);
+        randomNumber = generateRandomNumber(39);
       }
       selectedNumbers.push(randomNumber);
-      await getInstanceById("planets", randomNumber);
+      await getInstanceById("vehicles", randomNumber);
     } catch (err) {
       if ((err as any).response.status === 404) {
         handleGetFilm();
       }
     }
   };
+  console.log(data);
 
   return (
     <>
       <Header ishome={false} />
       <S.Main>
-        <FlipCard type={"Planet"} icon={<FaEarthAmericas />} handleClick={handleGetFilm}>
+        <FlipCard type={"vehicle"} icon={<FaCaravan />} handleClick={handleGetFilm}>
           {loading ? (
             <h2>Loading...</h2>
           ) : (
@@ -36,16 +37,16 @@ const Planets: React.FC = () => {
                 <h3>Name:</h3> <span>{data?.name}</span>
               </div>
               <div>
-                <h3>Terrain:</h3> <span>{data?.terrain}</span>
+                <h3>Model:</h3> <span>{data?.model}</span>
               </div>
               <div>
-                <h3>Population:</h3> <span>{data?.population}</span>
+                <h3>Manufacturer:</h3> <span>{data?.manufacturer}</span>
               </div>
               <div>
-                <h3>Gravity:</h3> <span>{data?.gravity}</span>
+                <h3>Max Atmosphering Speed:</h3> <span>{data?.max_atmosphering_speed}</span>
               </div>
               <div>
-                <h3>Climate:</h3> <span>{data?.climate}</span>
+                <h3>Vehicle Class:</h3> <span>{data?.vehicle_class}</span>
               </div>
             </S.Container>
           )}
@@ -55,4 +56,4 @@ const Planets: React.FC = () => {
   );
 };
 
-export default Planets;
+export default Vehicles;

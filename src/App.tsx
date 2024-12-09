@@ -9,6 +9,8 @@ import People from "./pages/People";
 import Planets from "./pages/Planets";
 import Species from "./pages/Species";
 import Starships from "./pages/Starships";
+import Vehicles from "./pages/Vehicles";
+
 function App() {
   return (
     <>
@@ -24,6 +26,7 @@ function App() {
             <Route path="/planets" Component={Planets} />
             <Route path="/species" Component={Species} />
             <Route path="/starships" Component={Starships} />
+            <Route path="/vehicles" Component={Vehicles} />
           </Routes>
         </Router>
       </ThemeProvider>

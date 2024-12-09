@@ -28,7 +28,7 @@ const Starships: React.FC = () => {
     <>
       <Header ishome={false} />
       <S.Main>
-        <FlipCard type={"Person"} icon={<FaRocket />} handleClick={handleGetFilm}>
+        <FlipCard type={"Starship"} icon={<FaRocket />} handleClick={handleGetFilm}>
           {loading ? (
             <h2>Loading...</h2>
           ) : (

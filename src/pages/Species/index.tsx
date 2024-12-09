@@ -28,7 +28,7 @@ const Species: React.FC = () => {
     <>
       <Header ishome={false} />
       <S.Main>
-        <FlipCard type={"Person"} icon={<FaDna />} handleClick={handleGetFilm}>
+        <FlipCard type={"Specie"} icon={<FaDna />} handleClick={handleGetFilm}>
           {loading ? (
             <h2>Loading...</h2>
           ) : (
