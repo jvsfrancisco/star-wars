@@ -9,7 +9,11 @@ import { FaRocket } from "react-icons/fa6";
 import { FaCaravan } from "react-icons/fa6";
 import { FaDna } from "react-icons/fa6";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  ishome?: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({ishome = true}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -18,7 +22,7 @@ const Header: React.FC = () => {
 
   return (
     <S.Container>
-      <S.MenuIcon onClick={toggleMenu}>
+      <S.MenuIcon onClick={toggleMenu} $ishome={ishome}>
         <span />
         <span />
         <span />
@@ -28,7 +32,7 @@ const Header: React.FC = () => {
         <h1>Star Wars</h1>
       </Link>
 
-      <S.Nav $isMenuOpen={isMenuOpen}>
+      <S.Nav $isMenuOpen={isMenuOpen}  $ishome={ishome}>
         <Link to="/home">
           <FaHouse />
           <h2>Home</h2>

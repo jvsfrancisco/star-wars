@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Card = styled.div`
+export const Card = styled(Link)`
   background-color: transparent;
   border: 2px solid yellow;
   border-radius: 8px;
@@ -13,6 +14,7 @@ export const Card = styled.div`
   justify-content: center;
   cursor: pointer;
   font-size: 2rem;
+  text-decoration: none;
 
   &:hover {
     transform: scale(1.1);

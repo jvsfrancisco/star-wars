@@ -4,6 +4,7 @@ import ParticlesBackground from "./components/Particles";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Home from "./pages/Home";
+import Films from "./pages/Films";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route path="/" Component={Landing} />
             <Route path="/home" Component={Home} />
+            <Route path="/films" Component={Films} />
           </Routes>
         </Router>
       </ThemeProvider>

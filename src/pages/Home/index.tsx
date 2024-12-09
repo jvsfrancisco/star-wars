@@ -14,37 +14,37 @@ const Home: React.FC = () => {
       <Header />
       <S.Main>
         <S.Cards>
-          <Card>
+          <Card to="/films">
             <div className="tag">
               <FaFilm />
               <h2>Films</h2>
             </div>
           </Card>
-          <Card>
+          <Card to="/people">
             <div className="tag">
               <FaClipboardUser />
               <h2>People</h2>
             </div>
           </Card>
-          <Card>
+          <Card to="/people">
             <div className="tag">
               <FaEarthAmericas />
               <h2>Planets</h2>
             </div>
           </Card>
-          <Card>
+          <Card to="/species">
             <div className="tag">
               <FaDna />
               <h2>Species</h2>
             </div>
           </Card>
-          <Card>
+          <Card to="/starships">
             <div className="tag">
               <FaRocket />
               <h2>Starships</h2>
             </div>
           </Card>
-          <Card>
+          <Card to="/vehicles">
             <div className="tag">
               <FaCaravan />
               <h2>vehicles</h2>

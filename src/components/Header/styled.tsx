@@ -10,8 +10,8 @@ export const Container = styled.div`
   width: 100%;
   height: 9vh;
   padding: 0 2rem;
-  background-color: ${({ theme }) => theme.colors["bg-color"]};
-  z-index: 1000;
+  background-color: transparent;
+  z-index: 5;
   a {
     text-decoration: none;
     a:hover {
@@ -38,11 +38,11 @@ export const Container = styled.div`
   }
 `;
 
-export const MenuIcon = styled.div`
+export const MenuIcon = styled.div<{ $ishome: boolean }>`
   position: fixed;
   top: 1.5rem;
   left: 2rem;
-  display: flex;
+  display: ${({ $ishome }) => ($ishome ? "none" : "flex")};
   flex-direction: column;
   justify-content: space-around;
   width: 2rem;
@@ -61,14 +61,14 @@ export const MenuIcon = styled.div`
   }
 `;
 
-export const Nav = styled.div<{ $isMenuOpen: boolean }>`
+export const Nav = styled.div<{ $isMenuOpen: boolean, $ishome: boolean }>`
   position: absolute;
   top: 9vh;
   left: 0;
   width: 60%;
   height: calc(100vh - 9vh);
-  background-color: ${({ theme }) => theme.colors["bg-color"]};
-  display: flex;
+  background-color: transparent;
+  display: ${({ $ishome }) => ($ishome ? "none" : "flex")};
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
