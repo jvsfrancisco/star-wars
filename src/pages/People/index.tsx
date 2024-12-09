@@ -1,12 +1,12 @@
 import Header from "../../components/Header";
 import FlipCard from "../../components/FlipCard";
-import { FaFilm } from "react-icons/fa6";
+import { FaClipboardUser } from "react-icons/fa6";
 import * as S from "./styled";
 import useApi from "../../hooks/useApi";
 import { generateRandomNumber } from "../../services/numberGenerator";
 
-const Films: React.FC = () => {
-  let randomNumber = generateRandomNumber(6);
+const People: React.FC = () => {
+  let randomNumber = generateRandomNumber(82);
   const selectedNumbers: [Number] | any = [];
   const { data, loading, getInstanceById } = useApi();
   const handleGetFilm = async () => {
@@ -15,7 +15,7 @@ const Films: React.FC = () => {
         randomNumber = generateRandomNumber(6);
       }
       selectedNumbers.push(randomNumber);
-      await getInstanceById("films", randomNumber);
+      await getInstanceById("people", randomNumber);
     } catch (err) {
       if ((err as any).response.status === 404) {
         handleGetFilm();
@@ -27,25 +27,25 @@ const Films: React.FC = () => {
     <>
       <Header ishome={false} />
       <S.Main>
-        <FlipCard type={"Film"} icon={<FaFilm />} handleClick={handleGetFilm}>
+        <FlipCard type={"Person"} icon={<FaClipboardUser />} handleClick={handleGetFilm}>
           {loading ? (
             <h2>Loading...</h2>
           ) : (
             <S.Container>
               <div>
-                <h3>Title:</h3> <span>{data?.title}</span>
+                <h3>Name:</h3> <span>{data?.name}</span>
               </div>
               <div>
-                <h3>Episode:</h3> <span>{data?.episode_id}</span>
+                <h3>Birth Year:</h3> <span>{data?.birth_year}</span>
               </div>
               <div>
-                <h3>Director:</h3> <span>{data?.director}</span>
+                <h3>Height:</h3> <span>{data?.height}</span>
               </div>
               <div>
-                <h3>Produtor:</h3> <span>{data?.producer}</span>
+                <h3>Mass:</h3> <span>{data?.mass}</span>
               </div>
               <div>
-                <h3>Data de lançamento:</h3> <span>{data?.release_date}</span>
+                <h3>Gender:</h3> <span>{data?.gender}</span>
               </div>
             </S.Container>
           )}
@@ -55,4 +55,4 @@ const Films: React.FC = () => {
   );
 };
 
-export default Films;
+export default People;
