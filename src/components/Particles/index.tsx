@@ -19,66 +19,66 @@ const Particle = () => {
   }, []);
 
   const options: ISourceOptions = {
-      background: {},
-      fpsLimit: 60,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
+    background: {},
+    fpsLimit: 60,
+    interactivity: {
+      events: {
+        onClick: {
+          enable: true,
+          mode: "push",
         },
-        modes: {
-          push: {
-            quantity: 4,
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4,
-          },
+        onHover: {
+          enable: true,
+          mode: "repulse",
         },
       },
-      particles: {
-        color: {
-          value: "#ffffff"
+      modes: {
+        push: {
+          quantity: 4,
         },
-        move: {
-          enable: true,
-          speed: 0.3,
-          direction: MoveDirection.none,
-          random: false,
-          straight: false,
-          outModes: {
-            default: OutMode.out,
-          },
+        repulse: {
+          distance: 200,
+          duration: 0.4,
         },
-        number: {
-          value: 80,
-          density: {
-            enable: false,
-          },
+      },
+    },
+    particles: {
+      color: {
+        value: "#ffffff",
+      },
+      move: {
+        enable: true,
+        speed: 0.3,
+        direction: MoveDirection.none,
+        random: false,
+        straight: false,
+        outModes: {
+          default: OutMode.out,
         },
-        opacity: {
-          value: 0.9,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: {
-            min: 0.2,
-            max: 1,
-          },
-        },
-        links: {
+      },
+      number: {
+        value: 80,
+        density: {
           enable: false,
         },
       },
-    };
+      opacity: {
+        value: 0.9,
+      },
+      shape: {
+        type: "circle",
+      },
+      size: {
+        value: {
+          min: 0.2,
+          max: 1,
+        },
+      },
+      links: {
+        enable: false,
+      },
+    },
+  };
 
   if (init) {
     return (
@@ -92,7 +92,6 @@ const Particle = () => {
           zIndex: -10,
         }}
       />
-
     );
   }
 

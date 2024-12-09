@@ -1,6 +1,6 @@
-import starWars from '../../assets/images/star-wars.png';
-import { Container } from './styled';
-import Button from '../../components/Button';
+import starWars from "../../assets/images/star-wars.png";
+import { Container } from "./styled";
+import Button from "../../components/Button";
 
 const Landing: React.FC = () => {
   return (
@@ -11,6 +11,6 @@ const Landing: React.FC = () => {
       </Button>
     </Container>
   );
-}
+};
 
 export default Landing;

@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 100vh;
   width: 100vw;
   gap: 3rem;
-  img{
+  img {
     width: 60%;
     @media (min-width: 1024px) {
       width: 35%;

@@ -6,7 +6,7 @@ interface SizeProps {
   color: string;
 }
 
-export const Link = styled(RouterLink) <SizeProps>`
+export const Link = styled(RouterLink)<SizeProps>`
   font-size: ${(props) => props.size};
   background: ${({ theme, color }) => theme.colors[`${color}-color`]};
   box-shadow: 0 0 10px ${({ theme, color }) => theme.colors[`${color}-color`]};
@@ -25,9 +25,9 @@ export const Link = styled(RouterLink) <SizeProps>`
   &:active {
     transform: scale(0.9);
   }
-  p{
-  color: #000;
-  letter-spacing: 2px;
+  p {
+    color: #000;
+    letter-spacing: 2px;
   }
 `;
 
@@ -41,7 +41,10 @@ export const Button = styled.button<SizeProps>`
   transition: 0.3s;
   &:hover {
     box-shadow: 0 0 10px ${({ theme, color }) => theme.colors[`${color}-color`]};
-    background-color: ${({ theme, color }) => color === "primary" ? theme.colors["secondary-color"] : theme.colors["primary-color"]};
+    background-color: ${({ theme, color }) =>
+      color === "primary"
+        ? theme.colors["secondary-color"]
+        : theme.colors["primary-color"]};
     transform: scale(1.1);
   }
   &:active {

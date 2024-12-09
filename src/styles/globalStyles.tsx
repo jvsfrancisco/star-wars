@@ -1,10 +1,10 @@
-import { createGlobalStyle, css } from 'styled-components';
-import StarJediFont from '../assets/fonts/Starjedi.ttf';
+import { createGlobalStyle, css } from "styled-components";
+import StarJediFont from "../assets/fonts/Starjedi.ttf";
 
 const StarJedi = css`
   @font-face {
-    font-family: 'StarJedi';
-    src: url(${StarJediFont}) format('truetype');
+    font-family: "StarJedi";
+    src: url(${StarJediFont}) format("truetype");
     font-weight: normal;
     font-style: normal;
   }
@@ -40,7 +40,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
-	background-color: ${props => props.theme.colors['bg-color']};
+	background-color: ${(props) => props.theme.colors["bg-color"]};
 	font-family: 'StarJedi', 'Inter', monospace;
 }
 ol, ul {
@@ -61,19 +61,18 @@ table {
 
 *{
 	box-sizing: border-box;
-	color: ${props => props.theme.colors['primary-color']};
+	color: ${(props) => props.theme.colors["primary-color"]};
 	user-select: none;
 }
 
-/*variables*/
 `;
 
 export default GlobalStyle;
 
 export const theme = {
-	colors: {
-		'bg-color': '#000000',
-		'primary-color': '#ffffff',
-		'secondary-color': '#fbfb07',
-	},
+  colors: {
+    "bg-color": "#000000",
+    "primary-color": "#ffffff",
+    "secondary-color": "#fbfb07",
+  },
 };
