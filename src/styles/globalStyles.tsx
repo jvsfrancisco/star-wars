@@ -27,7 +27,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-  background-color: var(--bg-color);
+  background-color: ${props => props.theme.colors['bg-color']};
+  font-family: 'Inter', sans-serif;
 }
 ol, ul {
 	list-style: none;
@@ -44,12 +45,21 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/*variables*/
-:root {
-  --bg-color: #000000;
-  --primary-color: #ffffff;
-  --secondary-color: #fbfb07;
+
+*{
+  box-sizing: border-box;
+  color: ${props => props.theme.colors['primary-color']};
 }
+
+/*variables*/
 `;
 
 export default GlobalStyle;
+
+export const theme = {
+	colors: {
+		'bg-color': '#000000',
+		'primary-color': '#ffffff',
+		'secondary-color': '#fbfb07',
+	},
+};

@@ -1,11 +1,21 @@
-import GlobalStyle from "./styles/globalStyles"
-
+import GlobalStyle, { theme } from "./styles/globalStyles"
+import { ThemeProvider } from "styled-components"
+import ParticlesBackground from "./components/Particles"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Landing from "./pages/Landing"
 function App() {
 
   return (
     <>
-      <GlobalStyle />
-      <h1>App</h1>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <ParticlesBackground />
+        <Router>
+          <Routes>
+            <Route path="/" Component={Landing} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
     </>
   )
 }
