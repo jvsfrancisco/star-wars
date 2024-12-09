@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Films from "./pages/Films";
 import People from "./pages/People";
 import Planets from "./pages/Planets";
+import Species from "./pages/Species";
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
             <Route path="/films" Component={Films} />
             <Route path="/people" Component={People} />
             <Route path="/planets" Component={Planets} />
+            <Route path="/species" Component={Species} />
           </Routes>
         </Router>
       </ThemeProvider>
