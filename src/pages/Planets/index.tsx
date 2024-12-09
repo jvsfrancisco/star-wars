@@ -1,21 +1,21 @@
 import Header from "../../components/Header";
 import FlipCard from "../../components/FlipCard";
-import { FaClipboardUser } from "react-icons/fa6";
+import { FaEarthAmericas } from "react-icons/fa6";
 import * as S from "./styled";
 import useApi from "../../hooks/useApi";
 import { generateRandomNumber } from "../../services/numberGenerator";
 
-const People: React.FC = () => {
-  let randomNumber = generateRandomNumber(82);
+const Planets: React.FC = () => {
+  let randomNumber = generateRandomNumber(60);
   const selectedNumbers: [Number] | any = [];
   const { data, loading, getInstanceById } = useApi();
   const handleGetFilm = async () => {
     try {
       while (selectedNumbers.includes(randomNumber)) {
-        randomNumber = generateRandomNumber(82);
+        randomNumber = generateRandomNumber(60);
       }
       selectedNumbers.push(randomNumber);
-      await getInstanceById("people", randomNumber);
+      await getInstanceById("planets", randomNumber);
     } catch (err) {
       if ((err as any).response.status === 404) {
         handleGetFilm();
@@ -27,7 +27,7 @@ const People: React.FC = () => {
     <>
       <Header ishome={false} />
       <S.Main>
-        <FlipCard type={"Person"} icon={<FaClipboardUser />} handleClick={handleGetFilm}>
+        <FlipCard type={"Person"} icon={<FaEarthAmericas />} handleClick={handleGetFilm}>
           {loading ? (
             <h2>Loading...</h2>
           ) : (
@@ -36,16 +36,16 @@ const People: React.FC = () => {
                 <h3>Name:</h3> <span>{data?.name}</span>
               </div>
               <div>
-                <h3>Birth Year:</h3> <span>{data?.birth_year}</span>
+                <h3>Terrain:</h3> <span>{data?.terrain}</span>
               </div>
               <div>
-                <h3>Height:</h3> <span>{data?.height}</span>
+                <h3>Population:</h3> <span>{data?.population}</span>
               </div>
               <div>
-                <h3>Mass:</h3> <span>{data?.mass}</span>
+                <h3>Gravity:</h3> <span>{data?.gravity}</span>
               </div>
               <div>
-                <h3>Gender:</h3> <span>{data?.gender}</span>
+                <h3>Climate:</h3> <span>{data?.climate}</span>
               </div>
             </S.Container>
           )}
@@ -55,4 +55,4 @@ const People: React.FC = () => {
   );
 };
 
-export default People;
+export default Planets;
