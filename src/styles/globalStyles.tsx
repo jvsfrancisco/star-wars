@@ -1,6 +1,17 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
+import StarJediFont from '../assets/fonts/Starjedi.ttf';
+
+const StarJedi = css`
+  @font-face {
+    font-family: 'StarJedi';
+    src: url(${StarJediFont}) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+`;
 
 const GlobalStyle = createGlobalStyle`
+${StarJedi}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,15 +31,17 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+	user-select: none;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
 body {
 	line-height: 1;
-  background-color: ${props => props.theme.colors['bg-color']};
-  font-family: 'Inter', sans-serif;
+	background-color: ${props => props.theme.colors['bg-color']};
+	font-family: 'StarJedi', 'Inter', monospace;
 }
 ol, ul {
 	list-style: none;
@@ -47,8 +60,9 @@ table {
 }
 
 *{
-  box-sizing: border-box;
-  color: ${props => props.theme.colors['primary-color']};
+	box-sizing: border-box;
+	color: ${props => props.theme.colors['primary-color']};
+	user-select: none;
 }
 
 /*variables*/
